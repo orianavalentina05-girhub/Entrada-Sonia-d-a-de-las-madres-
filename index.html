@@ -1,33 +1,22 @@
+``'
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¡Feliz Día de las Madres!</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
+    <script src="[https://unpkg.com/lucide@latest](https://unpkg.com/lucide@latest)"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300;400;600;700&display=swap');
-        
-        body {
-            font-family: 'Quicksand', sans-serif;
-            background-color: #fffafa;
-        }
-        .font-serif {
-            font-family: 'Dancing Script', cursive;
-        }
-        .animate-bounce-slow {
-            animation: bounce 3s infinite;
-        }
-        @keyframes bounce {
-            0%, 100% { transform: translate(-50%, -10px); }
-            50% { transform: translate(-50%, 0); }
-        }
+        @import url('[https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300;400;600;700&display=swap](https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300;400;600;700&display=swap)');
+        body { font-family: 'Quicksand', sans-serif; background-color: #fffafa; margin: 0; padding: 0; }
+        .font-serif { font-family: 'Dancing Script', cursive; }
+        .animate-fade-in { animation: fadeIn 1s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
-<body class="text-slate-900 flex flex-col items-center">
+<body class="text-slate-900 flex flex-col items-center overflow-x-hidden">
 
     <!-- Decoración de fondo -->
     <div class="fixed inset-0 pointer-events-none overflow-hidden opacity-30 z-0">
@@ -36,9 +25,9 @@
         <div class="absolute top-[40%] left-[20%] w-48 h-48 bg-purple-100 rounded-full blur-[80px]"></div>
     </div>
 
-    <!-- PÁGINA DE BIENVENIDA -->
-    <div id="welcomePage" class="relative z-10 flex-1 flex flex-col items-center justify-center p-6 max-w-md w-full min-h-screen transition-all duration-1000 transform translate-y-0 opacity-100">
-        <div class="bg-white/70 backdrop-blur-xl p-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-white text-center w-full relative overflow-hidden">
+    <!-- PÁGINA 1: BIENVENIDA -->
+    <div id="welcomePage" class="relative z-10 flex-1 flex flex-col items-center justify-center p-6 max-w-md w-full min-h-screen transition-all duration-700 animate-fade-in">
+        <div class="bg-white/80 backdrop-blur-xl p-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-white text-center w-full relative overflow-hidden">
             <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-rose-300 via-pink-400 to-rose-300"></div>
             
             <div class="mb-8 relative inline-block">
@@ -48,53 +37,34 @@
                 </div>
             </div>
 
-            <h1 class="text-4xl font-serif font-bold text-slate-800 mb-8 italic tracking-tight">
-                ¡Feliz Día de las Madres!
-            </h1>
+            <h1 class="text-4xl font-serif font-bold text-slate-800 mb-8 italic tracking-tight">¡Feliz Día de las Madres!</h1>
             
-            <div class="space-y-8 mb-12">
+            <div class="space-y-8 mb-12 text-center">
                 <p class="text-xl text-slate-700 leading-relaxed font-light">
                     Mami, este regalo es de <span class="text-rose-600 font-semibold border-b-2 border-rose-200 pb-1">Fabi y Ori</span>, para que lo disfrutes mucho.
                 </p>
                 
                 <div class="relative py-2">
                     <div class="absolute left-0 top-0 text-4xl text-rose-200 font-serif">“</div>
-                    <p class="text-slate-600 italic px-6 text-lg leading-snug">
-                        Eres la mejor mamá del mundo, no hay regalo que pueda igualar el valor de tu amor.
-                    </p>
+                    <p class="text-slate-600 italic px-6 text-lg leading-snug">Eres la mejor mamá del mundo, no hay regalo que pueda igualar el valor de tu amor.</p>
                     <div class="absolute right-0 bottom-0 text-4xl text-rose-200 font-serif rotate-180">“</div>
                 </div>
 
                 <div class="pt-4">
-                    <p class="text-rose-500 font-bold text-2xl tracking-wide">
-                        Te amamos,<br/>
-                        <span class="text-slate-800 font-serif italic text-3xl mt-2 inline-block">Tus bebés amadas</span>
-                    </p>
+                    <p class="text-rose-500 font-bold text-2xl tracking-wide">Te amamos,<br/><span class="text-slate-800 font-serif italic text-3xl mt-2 inline-block">Tus bebés amadas</span></p>
                 </div>
             </div>
 
-            <button
-              onclick="showGift()"
-              class="group relative w-full py-5 bg-slate-900 text-white rounded-2xl font-bold text-lg shadow-2xl hover:shadow-rose-200 transition-all duration-500 flex items-center justify-center gap-3 overflow-hidden"
-            >
-              <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-rose-500 to-pink-600 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
-              <span class="relative flex items-center gap-2 tracking-wider uppercase text-sm">
-                Abrir mi regalo <i data-lucide="gift" class="w-5 h-5"></i>
-              </span>
+            <button onclick="showGift()" class="group relative w-full py-5 bg-slate-900 text-white rounded-2xl font-bold text-lg shadow-2xl transition-all duration-300 flex items-center justify-center gap-3 overflow-hidden active:scale-95">
+              <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-rose-500 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <span class="relative flex items-center gap-2 tracking-wider uppercase text-sm">Abrir mi regalo <i data-lucide="gift" class="w-5 h-5"></i></span>
             </button>
-        </div>
-        
-        <div class="mt-8 flex items-center gap-2 text-slate-400 text-[10px] font-bold tracking-[0.3em] uppercase">
-            <i data-lucide="sparkles" class="w-3 h-3"></i> Hecho con todo nuestro corazón <i data-lucide="sparkles" class="w-3 h-3"></i>
         </div>
     </div>
 
-    <!-- PÁGINA DEL REGALO (ENTRADAS) -->
-    <div id="giftPage" class="hidden relative z-10 flex-1 w-full max-w-2xl p-4 md:p-10 opacity-0 transform translate-y-10 transition-all duration-1000">
-        <button 
-            onclick="showWelcome()"
-            class="mb-8 text-slate-400 flex items-center gap-2 hover:text-rose-500 transition-colors text-xs font-bold tracking-widest uppercase"
-        >
+    <!-- PÁGINA 2: DETALLES Y ENTRADAS -->
+    <div id="giftPage" class="hidden relative z-10 flex-1 w-full max-w-2xl p-4 md:p-10 transition-all duration-700">
+        <button onclick="showWelcome()" class="mb-8 text-slate-400 flex items-center gap-2 hover:text-rose-500 transition-colors text-xs font-bold tracking-widest uppercase mt-10">
             <i data-lucide="chevron-left" class="w-4 h-4"></i> Volver al mensaje
         </button>
 
@@ -128,13 +98,8 @@
                         <div>
                             <p class="text-[10px] text-slate-400 font-black uppercase tracking-widest mb-1">Cuándo</p>
                             <p class="text-slate-800 font-bold text-lg">Jueves, 07 de Mayo de 2026</p>
-                            <div class="mt-1 flex flex-col gap-0.5">
-                                <p class="text-slate-500 text-xs font-medium">Puertas: 08:30 PM</p>
-                                <p class="text-rose-600 text-xs font-bold italic">Show: 10:00 PM</p>
-                            </div>
                         </div>
                     </div>
-
                     <div class="flex gap-5">
                         <div class="w-14 h-14 bg-amber-50 rounded-[1.25rem] flex items-center justify-center shrink-0 border border-amber-100/50">
                             <i data-lucide="map-pin" class="w-6 h-6 text-amber-500"></i>
@@ -142,114 +107,55 @@
                         <div>
                             <p class="text-[10px] text-slate-400 font-black uppercase tracking-widest mb-1">Dónde</p>
                             <p class="text-slate-800 font-bold text-lg">Flamingo Theater Bar</p>
-                            <p class="text-slate-500 text-sm leading-tight font-medium">905 Brickell Bay Drive, Miami, Florida, 33131</p>
-                        </div>
-                    </div>
-
-                    <div class="flex gap-5">
-                        <div class="w-14 h-14 bg-purple-50 rounded-[1.25rem] flex items-center justify-center shrink-0 border border-purple-100/50">
-                            <i data-lucide="ticket" class="w-6 h-6 text-purple-500"></i>
-                        </div>
-                        <div>
-                            <p class="text-[10px] text-slate-400 font-black uppercase tracking-widest mb-1">Ubicación</p>
-                            <p class="text-slate-800 font-bold text-lg">TABLE 73</p>
-                            <p class="text-rose-50 text-xs bg-rose-500 px-2 py-0.5 rounded-full inline-block font-bold">Fila 7</p>
-                        </div>
-                    </div>
-
-                    <div class="flex gap-5">
-                        <div class="w-14 h-14 bg-blue-50 rounded-[1.25rem] flex items-center justify-center shrink-0 border border-blue-100/50">
-                            <i data-lucide="users" class="w-6 h-6 text-blue-500"></i>
-                        </div>
-                        <div>
-                            <p class="text-[10px] text-slate-400 font-black uppercase tracking-widest mb-1">Reserva</p>
-                            <p class="text-slate-800 font-bold text-lg leading-tight mb-1">Oriana Ornelas</p>
-                            <p class="text-blue-600 text-xs font-bold uppercase tracking-tight">Válido para 2 personas</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="flex flex-col gap-5 pt-4">
-                    <button 
-                        onclick="handleDownload()"
-                        class="group w-full py-7 bg-slate-900 text-white rounded-[1.5rem] font-bold flex items-center justify-center gap-4 shadow-2xl hover:bg-slate-800 transition-all active:scale-[0.98]"
-                    >
-                        <i data-lucide="download" class="w-7 h-7"></i> 
-                        DESCARGAR ENTRADAS PDF
-                    </button>
-
-                    <button 
-                        onclick="handleDrive()"
-                        class="group w-full py-7 bg-white text-slate-900 border-2 border-slate-900 rounded-[1.5rem] font-bold flex items-center justify-center gap-4 shadow-lg hover:bg-slate-50 transition-all active:scale-[0.98]"
-                    >
+                    <button onclick="window.open('[https://drive.google.com/file/d/1eqp3dGqWuOTLptkwYqz_jNOpPdBMQo4o/view?usp=drivesdk](https://drive.google.com/file/d/1eqp3dGqWuOTLptkwYqz_jNOpPdBMQo4o/view?usp=drivesdk)', '_blank')" 
+                            class="group w-full py-7 bg-slate-900 text-white rounded-[1.5rem] font-bold flex items-center justify-center gap-4 shadow-2xl hover:bg-slate-800 transition-all active:scale-95">
                         <i data-lucide="external-link" class="w-7 h-7 text-rose-500"></i> 
-                        VER EN GOOGLE DRIVE
+                        VER ENTRADAS
                     </button>
                 </div>
 
                 <div class="text-center">
                     <p class="text-[11px] text-slate-400 leading-relaxed font-medium italic">
-                        Las entradas están a nombre de Oriana Ornelas.<br/>
-                        Por favor, descarga los archivos para presentarlos en la entrada del Flamingo Theater Bar.
+                        Por favor, muestra el archivo en el enlace para entrar al Flamingo Theater Bar.
                     </p>
                 </div>
             </div>
         </div>
 
-        <footer class="mt-12 text-center pb-12">
-            <p class="text-slate-400 text-[11px] font-medium tracking-[0.2em] uppercase">
-                ¡Disfrútalo al máximo, mamá Sonia!
-            </p>
+        <footer class="mt-12 text-center pb-20">
+            <p class="text-slate-400 text-[11px] font-medium tracking-[0.2em] uppercase italic">¡Disfrútalo al máximo, mamá Sonia!</p>
         </footer>
     </div>
 
     <script>
-        // Inicializar iconos
         lucide.createIcons();
-
         const welcomePage = document.getElementById('welcomePage');
         const giftPage = document.getElementById('giftPage');
 
         function showGift() {
-            // Animación de salida de bienvenida
-            welcomePage.classList.add('opacity-0', '-translate-y-10');
+            welcomePage.classList.add('opacity-0', 'scale-95');
             setTimeout(() => {
                 welcomePage.classList.add('hidden');
                 giftPage.classList.remove('hidden');
-                // Forzar reflow para animación
-                giftPage.offsetHeight;
-                giftPage.classList.remove('opacity-0', 'translate-y-10');
-                giftPage.classList.add('opacity-100', 'translate-y-0');
-            }, 500);
+                giftPage.classList.add('animate-fade-in');
+            }, 400);
         }
 
         function showWelcome() {
-            giftPage.classList.add('opacity-0', 'translate-y-10');
+            giftPage.classList.remove('animate-fade-in');
+            giftPage.classList.add('opacity-0');
             setTimeout(() => {
                 giftPage.classList.add('hidden');
-                welcomePage.classList.remove('hidden');
-                welcomePage.offsetHeight;
-                welcomePage.classList.remove('opacity-0', '-translate-y-10');
-                welcomePage.classList.add('opacity-100', 'translate-y-0');
-            }, 500);
-        }
-
-        function handleDownload() {
-            const message = document.createElement('div');
-            message.className = 'fixed top-10 left-1/2 bg-slate-900 text-white px-8 py-4 rounded-2xl shadow-2xl z-50 animate-bounce-slow flex items-center gap-3 border border-pink-400/30 whitespace-nowrap';
-            message.style.transform = 'translateX(-50%)';
-            message.innerHTML = `<span class="text-pink-400">✨</span> ¡Entradas preparadas para Sonia!`;
-            document.body.appendChild(message);
-            
-            setTimeout(() => {
-                message.remove();
-            }, 3500);
-        }
-
-        function handleDrive() {
-            window.open('https://drive.google.com/file/d/1eqp3dGqWuOTLptkwYqz_jNOpPdBMQo4o/view?usp=drivesdk', '_blank');
+                welcomePage.classList.remove('hidden', 'opacity-0', 'scale-95');
+            }, 400);
         }
     </script>
 </body>
 </html>
 
+```
