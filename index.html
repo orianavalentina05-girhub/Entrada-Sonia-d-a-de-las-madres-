@@ -31,7 +31,7 @@
 </head>
 <body class="text-slate-900 flex flex-col items-center min-h-screen">
 
-    <!-- Fondo decorativo -->
+    <!-- Fondo decorativo suave -->
     <div class="fixed inset-0 pointer-events-none overflow-hidden opacity-30 z-0">
         <div class="absolute top-[-5%] left-[-5%] w-72 h-72 bg-pink-200 rounded-full blur-[100px]"></div>
         <div class="absolute bottom-[10%] right-[-5%] w-96 h-96 bg-rose-200 rounded-full blur-[100px]"></div>
@@ -101,6 +101,7 @@
 
         <!-- Tarjeta de Entrada -->
         <div class="bg-white rounded-[2.5rem] shadow-[0_30px_70px_rgba(0,0,0,0.08)] overflow-hidden border border-slate-50 relative">
+            
             <!-- Cabecera de la Entrada -->
             <div class="bg-slate-900 px-8 py-10 text-white relative overflow-hidden">
                 <div class="absolute right-[-20px] top-[-20px] w-40 h-40 bg-rose-500/20 rounded-full blur-3xl"></div>
@@ -119,7 +120,7 @@
             <div class="p-8 space-y-10">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8">
                     
-                    <!-- Fecha y Hora -->
+                    <!-- Fecha y Horarios -->
                     <div class="flex gap-4">
                         <div class="w-12 h-12 bg-rose-50 rounded-xl flex items-center justify-center shrink-0 border border-rose-100">
                             <i data-lucide="calendar" class="w-5 h-5 text-rose-500"></i>
@@ -127,7 +128,10 @@
                         <div>
                             <p class="text-[10px] text-slate-400 font-black uppercase tracking-widest mb-1">Cuándo</p>
                             <p class="text-slate-800 font-bold text-md leading-tight">Jueves, 07 de Mayo de 2026</p>
-                            <p class="text-rose-600 text-xs font-bold italic mt-0.5">Show: 10:00 PM</p>
+                            <div class="mt-1 flex flex-col gap-0.5">
+                                <p class="text-slate-500 text-xs font-medium">Puertas: 08:30 PM</p>
+                                <p class="text-rose-600 text-xs font-bold italic">Inicio Show: 10:00 PM</p>
+                            </div>
                         </div>
                     </div>
 
@@ -139,7 +143,7 @@
                         <div>
                             <p class="text-[10px] text-slate-400 font-black uppercase tracking-widest mb-1">Dónde</p>
                             <p class="text-slate-800 font-bold text-md leading-tight">Flamingo Theater Bar</p>
-                            <p class="text-slate-500 text-xs">905 Brickell Bay Drive, Miami</p>
+                            <p class="text-slate-500 text-xs font-medium">905 Brickell Bay Drive, Miami</p>
                         </div>
                     </div>
 
@@ -151,7 +155,7 @@
                         <div>
                             <p class="text-[10px] text-slate-400 font-black uppercase tracking-widest mb-1">Ubicación</p>
                             <p class="text-slate-800 font-bold text-md leading-tight">TABLE 73</p>
-                            <p class="text-rose-500 text-xs font-bold">Fila 7</p>
+                            <p class="text-rose-500 text-xs font-bold uppercase">Fila 7</p>
                         </div>
                     </div>
 
@@ -168,7 +172,7 @@
                     </div>
                 </div>
 
-                <!-- Botón de Acción -->
+                <!-- Botón Único de Acción -->
                 <div class="pt-4">
                     <button 
                         onclick="window.open('https://drive.google.com/file/d/1eqp3dGqWuOTLptkwYqz_jNOpPdBMQo4o/view?usp=drivesdk', '_blank')"
@@ -181,8 +185,7 @@
 
                 <div class="text-center">
                     <p class="text-[11px] text-slate-400 leading-relaxed font-medium italic">
-                        Presenta el archivo digital en la entrada del teatro.<br/>
-                        ¡Feliz noche de comedia, mamá!
+                        Por favor, descarga el archivo para presentarlo en la entrada del teatro.
                     </p>
                 </div>
             </div>
@@ -190,19 +193,20 @@
 
         <footer class="mt-10 text-center pb-12">
             <p class="text-slate-400 text-[10px] font-medium tracking-[0.2em] uppercase italic">
-                ¡Hecho con amor para Sonia!
+                ¡Disfrútalo al máximo, mamá Sonia!
             </p>
         </footer>
     </div>
 
     <script>
-        // Inicializar iconos
+        // Inicializar iconos de Lucide
         lucide.createIcons();
 
         const welcomePage = document.getElementById('welcomePage');
         const giftPage = document.getElementById('giftPage');
 
         function showGift() {
+            // Cambio de página simple para evitar errores
             welcomePage.style.display = 'none';
             giftPage.classList.remove('hidden');
             window.scrollTo(0,0);
